@@ -1,3 +1,23 @@
+steps
+1.create-react-app
+2.configured tailwind css
+
+# features built
+1.login/signup page
+    -signin/signup forms
+    -redirect to browse page
+2.Browse(Authentication success)
+    -header
+    -main movie
+        -trailer in background
+        -title and description
+        -movie suggestions
+            --movielists * N
+3.Netflix GPT 
+    -search bar
+    -movie suggestions
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
