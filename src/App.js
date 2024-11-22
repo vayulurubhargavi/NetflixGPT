@@ -1,13 +1,8 @@
-
+import Body from "./components/Body";
 
 function App() {
-  return (
-    <div className="text-2xl font-bold  m-auto text-green-600">
-      
-          Learn React
-
-    </div>
-  );
+  
+  return  <Body/>
 }
 
 export default App;

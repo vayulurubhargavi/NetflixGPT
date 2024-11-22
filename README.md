@@ -1,6 +1,11 @@
 steps
 1.create-react-app
 2.configured tailwind css
+3.built header
+4.created SignIn form-toggled same form to SignUp form
+5.Form Validations using Formik
+
+
 
 # features built
 1.login/signup page
