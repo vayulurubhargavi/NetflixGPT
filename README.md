@@ -1,11 +1,17 @@
 steps
 1.create-react-app
 2.configured tailwind css
-3.built header
-4.created SignIn form-toggled same form to SignUp form
-5.Form Validations using Formik
-
-
+3.Routing
+4.built header
+5.created SignIn form-toggled same form to SignUp form
+6.Form Validations using regex  (also useRef hook)
+7.firebase setup 
+8.deployed application using firebase
+9.firebase authentication- create a signup user account
+10.deploy app to production
+11.implemented signin-signup user api 
+12.create redux store with userSlice
+13,implemented sign out feature
 
 # features built
 1.login/signup page
