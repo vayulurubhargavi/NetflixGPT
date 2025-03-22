@@ -1,33 +1,49 @@
 steps
-1.create-react-app
-2.configured tailwind css
-3.Routing
-4.built header
-5.created SignIn form-toggled same form to SignUp form
-6.Form Validations using regex  (also useRef hook)
-7.firebase setup 
-8.deployed application using firebase
-9.firebase authentication- create a signup user account
-10.deploy app to production
-11.implemented signin-signup user api 
-12.create redux store with userSlice
-13,implemented sign out feature
+
+1. create-react-app
+2. configured tailwind css
+3. Routing
+4. built header
+5. created SignIn form-toggled same form to SignUp form
+6. Form Validations using regex (also useRef hook)
+7. firebase setup
+8. deployed application using firebase
+9. firebase authentication- create a signup user account
+10. deploy app to production
+11. implemented signin-signup user api
+12. create redux store with userSlice
+13. implemented sign out feature
+14. update profile api call
+15. bugfix:updated the displayname and profile picture
+16. bugfix: if the user is not logged in -redirect the /browse page to /login page
+17. unsubscribed to the onAuthStateChange callback
+18. add the hardcoded values inside the constants.js file
+
+browse Page---------------------------------------------------------------- 
+19. Register TMDB API & create an app in it & get the access token 
+20. get the data from the TMDB now playing movies list API
+21. custom hooks-for nowPlayingMovies
+22. create movieSlice
+23. update the store with moviedata
+24. planning for main and secondary container
+25. embed the youtube video and make it autoplay,mute,loop
+26. 
 
 # features built
-1.login/signup page
-    -signin/signup forms
-    -redirect to browse page
-2.Browse(Authentication success)
-    -header
-    -main movie
-        -trailer in background
-        -title and description
-        -movie suggestions
-            --movielists * N
-3.Netflix GPT 
-    -search bar
-    -movie suggestions
 
+1.login/signup page
+-signin/signup forms
+-redirect to browse page
+2.Browse(Authentication success)
+-header
+-main movie
+-trailer in background
+-title and description
+-movie suggestions
+--movielists \* N
+3.Netflix GPT
+-search bar
+-movie suggestions
 
 # Getting Started with Create React App
 
