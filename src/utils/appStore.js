@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
+import movieReducer from "./movieSlice";
 
 // Create a Redux store holding the state of your app
 // Its API is { subscribe, dispatch, getState }.
@@ -12,7 +13,8 @@ import userReducer from "./userSlice";
 const appStore = configureStore({
   reducer: {
         // Add reducers here
-      user: userReducer
+    user: userReducer,
+    movies: movieReducer
   },
 });
 

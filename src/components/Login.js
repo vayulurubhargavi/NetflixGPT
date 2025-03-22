@@ -11,6 +11,7 @@ import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { user_profilepic } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true),
@@ -49,16 +50,15 @@ const Login = () => {
             // update the userprofile with the name and profile picture
             updateProfile(auth.currentUser, {
               displayName: name.current.value,
-              photoURL:
-                "https://lh3.googleusercontent.com/a/ACg8ocKb3lU2t6JTO83nDWs7HhClshWEdP5pDu62bpoC-gpwdGLkGXKqqA=s432-c-no",
+              photoURL: user_profilepic,
             })
               .then(() => {
                 // Profile updated!
                 // if user is successfully logged in navigate to browse page
                 // when the new user is created and we update the profile then we need to update the store --do this we need to dispatch the action
-                const { uid, email, displayName, photoURL } = auth.currentUser;//get the updated user data from auth
+                const { uid, email, displayName, photoURL } = auth.currentUser; //get the updated user data from auth
                 dispatch(addUser({ uid, email, displayName, photoURL }));
-                navigate("/browse");
+                // navigate("/browse");-this is no longer needed as we are using the onAuthStateChanged to navigate to the browse page inside the header component
               })
               .catch((error) => {
                 // An error occurred
@@ -86,7 +86,8 @@ const Login = () => {
             const user = userCredential.user;
             // ...
             console.log(user);
-            navigate("/browse");
+
+            // navigate("/browse");-this is no longer needed as we are using the onAuthStateChanged to navigate to the browse page inside the header component
           })
           .catch((error) => {
             const errorCode = error.code;

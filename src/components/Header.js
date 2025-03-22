@@ -1,33 +1,53 @@
-import React from "react";
-import { signOut } from "firebase/auth";
+import React, { useEffect } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
+import { Netflix_Logo } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   // useSelector to get the user from the store
   const user = useSelector((store) => store.user);
-  console.log(user, "--user");
+  // console.log(user, "--user");
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.navigate to home page
-        navigate("/");
+        // navigate("/");--this is not needed as we are using the onAuthStateChanged to navigate to the home page
         //
       })
       .catch((error) => {
         // An error happened.
+        navigate("/error");
       });
   };
+
+  // when the user signin/singup/signout --the data should be stored in the redux store--this is done when once the user is authenticated
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in,destructure the user data and dispatch the action to store the user data in the redux store
+        const { uid, email, displayName, photoURL } = user;
+        // passing the payload to the action
+        dispatch(addUser({ uid, email, displayName, photoURL }));
+        // only navigate to the browse page when the user is signed in
+        navigate("/browse");
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/login");
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
     <div className="absolute w-screen z-50 px-8 py-4 bg-gradient-to-b from-black w-full flex justify-between ">
-      <img
-        className="w-44"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="netflix-logo"
-      />
+      <img className="w-44" src={Netflix_Logo} alt="netflix-logo" />
       {user && (
         <div className="flex items-center space-x-2">
           <img
