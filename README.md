@@ -27,7 +27,19 @@ browse Page----------------------------------------------------------------
 23. update the store with moviedata
 24. planning for main and secondary container
 25. embed the youtube video and make it autoplay,mute,loop
-26. 
+26. tailwind css to make the main-container look awesome
+27. build secondary component
+28. build movie list
+29. build movie card
+30. added tmdb image CDN URL
+31. made the browse page-with tailwinf css
+32. created the custom hooks -called them inside the browse page
+
+---GPT Integration---
+33. GPT Search page
+34. GPT Search bar
+35. Added translation to GPT Search Page
+36. 
 
 # features built
 

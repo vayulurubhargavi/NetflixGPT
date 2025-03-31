@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import movieReducer from "./movieSlice";
+import gptReducer from "./gptSlice";
+import configReducer from "./configSlice";
 
 // Create a Redux store holding the state of your app
 // Its API is { subscribe, dispatch, getState }.
@@ -12,9 +14,11 @@ import movieReducer from "./movieSlice";
 // The root reducer is a function that combines all the reducers in your app.
 const appStore = configureStore({
   reducer: {
-        // Add reducers here
+    // Add reducers here
     user: userReducer,
-    movies: movieReducer
+    movies: movieReducer,
+    gpt: gptReducer,
+    config: configReducer,
   },
 });
 
