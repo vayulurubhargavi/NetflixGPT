@@ -8,7 +8,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { user_profilepic } from "../utils/constants";
@@ -17,7 +17,7 @@ import { BG_URL } from "../utils/constants";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true),
     [errorMessage, setErrorMessage] = useState(null),
-    navigate = useNavigate(),
+  
     dispatch = useDispatch();
 
   const email = useRef(null),

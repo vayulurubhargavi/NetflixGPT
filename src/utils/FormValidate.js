@@ -1,5 +1,5 @@
 export const formValidation = (email, password) => {
-  const validEmail = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(email),
+  const validEmail = /^[\w\-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email),
     validPassword = /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$/.test(
       password
     );
