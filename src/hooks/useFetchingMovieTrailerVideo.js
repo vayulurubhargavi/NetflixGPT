@@ -17,7 +17,7 @@ const useFetchingMovieTrailerVideo = (movieId) => {
 
     // filter the trailer from the video data
     const filteredData = json.results.filter(
-      (video) => video.type == "Trailer"
+      (video) => video.type === "Trailer"
     ); //there are 3 trailers
     const trailer = filteredData.length ? filteredData[1] : json.results[0];
     dispatch(addTrailerVideo(trailer));
