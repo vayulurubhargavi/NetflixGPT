@@ -1,5 +1,5 @@
 {
-  "homepage": "https://vayulurubhargavi.github.io/",
+  "homepage": "https://vayulurubhargavi.github.io/NetflixGPT/",
   "name": "netflix-gpt",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^11.0.2",
-    "gh-pages": "^6.3.0",
     "openai": "^4.90.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -18,8 +17,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
