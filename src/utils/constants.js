@@ -8,8 +8,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer"+ process.env.REACT_APP_TMDB_API_KEY,
+    Authorization: "Bearer" + process.env.REACT_APP_TMDB_API_KEY,
   },
 };
 
@@ -24,4 +23,4 @@ export const supported_languages = [
   { identifier: "spanish", name: "Spanish" },
 ];
 
-export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+export const GEMINI_API_KEY = "AIzaSyBtIQdG8-ah0JtbP2D77VOaLL__43EKywo";
